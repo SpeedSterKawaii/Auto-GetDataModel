@@ -51,7 +51,7 @@ std::string GrabStringFromURL(const char* URL) //cringy
 
 string GDM = GrabStringFromURL("https://raw.githubusercontent.com/SpeedSterKawaii/Auto-GetDataModel/main/GDM.txt");//DO NOT CHANGE!
  
-
+static bool Status;//;)
 
 int GDM_Offset = 0; // let this be 0 dont update it.
 #define GDM_Convention __thiscall // prob nevar updates
@@ -66,9 +66,16 @@ bool DidItReplace()//did it replace? nope!
 
 static int MY_MAIN()
 {
+   Status = true;
    MessageBoxA(NULL, "Grabbing latest get-data-model.", "Auto GDM", NULL);
    int GDM_Grabbed = std::stoi(GDM);
    GDM_Offset = GDM_Grabbed;//switch it up
    MessageBoxA(NULL, GDM_Offset, "Hehe-GDM", NULL);
+   if (GDM_Offset == NULL && GDM_Grabbed == NULL)
+   {
+	MessageBoxA(NULL, "Returned a FALSE","FALSE", NULL);//obv didnt replace
+        Status = false;
+   }
    getchar(); exit(NULL);
+	return NULL;
 }
